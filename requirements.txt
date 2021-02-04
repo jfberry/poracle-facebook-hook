@@ -1,0 +1,2 @@
+aiohttp
+fbchat-asyncio
