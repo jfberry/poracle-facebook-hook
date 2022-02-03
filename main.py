@@ -22,13 +22,13 @@ async def post(request):
         if "content" in js:
             message = js["content"]
 
-        if "embed" in js:
-            message = js["embed"]["title"]
-            message += "\n" + js["embed"]["description"]
-            if "image" in js["embed"]:
-                image = js["embed"]["image"]["url"]
-            if "thumbnail" in js["embed"]:
-                thumbnail = js["embed"]["thumbnail"]["url"]
+        if "embeds" in js:
+            message = js["embeds"][0]["title"]
+            message += "\n" + js["embeds"][0]["description"]
+            if "image" in js["embeds"]:
+                image = js["embeds"][0]["image"]["url"]
+            if "thumbnail" in js["embeds"]:
+                thumbnail = js["embeds"][0]["thumbnail"]["url"]
 
         if "location" in js:
             lat = js["location"]["latitude"]
